@@ -1,0 +1,27 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon ./dist/server.js",
+    "prod": "npm run build && npm run start",
+    "dev": "ts-node ./src/server.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^3.0.10",
+    "typescript": "^2.9.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "@types/mongodb": "^3.0.21",
+    "@types/node": "^10.3.3",
+    "nodemon": "^1.17.5",
+    "ts-node": "^7.0.0"
+  }
+}
