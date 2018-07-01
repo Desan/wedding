@@ -8,15 +8,13 @@ export class ManagerController {
 
     constructor() {
         this.router = Router()
-        this.registerActions()
+        this.defineActions()
     }
 
-    private registerActions() {
+    private defineActions() {
         this.router.get('/', this.getAction)
     }
 
     private getAction(req: Request, res: Response) {
-        console.log("test get")
-        return res.send("TEST")
     }
 }

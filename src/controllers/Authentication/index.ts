@@ -1,5 +1,12 @@
 import { Router, Request, Response } from "express"
 
+const formFields = {
+    username: "Пользователь",
+    password: "Пароль",
+    submit: "Войти"
+}
+
+
 export class AuthenticationController {
 
     public static root = "/login"
@@ -16,8 +23,8 @@ export class AuthenticationController {
     }
 
     private getAction(req: Request, res: Response) {
-        res.render("login", {
-            translations: {}
+        res.render("login/login-form", {
+            translations: { ...formFields }
         })
     }
 }

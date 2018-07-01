@@ -1,3 +1,4 @@
-mixin formRow(type, name, placeholder)
+mixin formRow(type, name, placeholder, hrName)
     .form-group
-        input(type=type, name=name)
+        label(for=name) #{hrName}
+        input(type=type, name=name id=name)
