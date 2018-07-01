@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "build:css": "stylus ./src/views/stylesheets --out ./pub/css -w",
     "start": "nodemon ./dist/server.js",
     "prod": "npm run build && npm run start",
     "dev": "ts-node ./src/server.ts"
@@ -27,6 +28,7 @@
     "@types/passport": "^0.4.5",
     "@types/passport-local": "^1.0.33",
     "nodemon": "^1.17.5",
+    "stylus": "^0.54.5",
     "ts-node": "^7.0.0"
   }
 }

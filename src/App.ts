@@ -23,6 +23,7 @@ class App {
     private viewConfig(): void {
         this.app.set('view engine', 'pug');
         this.app.set('views', path.join(__dirname, "views"))
+        this.app.use(express.static("pub"))
     }
 
 }

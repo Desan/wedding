@@ -1,8 +1,12 @@
 extends ../layout.pug
 include ../common/form-row.pug
 
+block append styles
+    link(rel='stylesheet', href='/css/forms.css')
+
 block content
     .page-center
         form(role="form" action="/login" method="post")
             +formRow("text", "username", "", translations.username)
             +formRow("password", "password", "", translations.password)
+            button.btn-primary #{translations.submit}
