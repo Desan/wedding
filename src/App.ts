@@ -1,5 +1,6 @@
 import express from "express"
 import { ManagerController } from "./controllers/Manger"
+import { AuthenticationController } from "./controllers/Authentication"
 
 class App {
 
@@ -12,6 +13,7 @@ class App {
 
     private config(): void {
         this.app.use(express.json())
+        this.app.use(AuthenticationController.root, new AuthenticationController().router)
         this.app.use(ManagerController.root, new ManagerController().router)
     }
 

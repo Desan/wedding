@@ -1,0 +1,9 @@
+extends ../layout.pug
+
+block content
+    .page-center
+        form(role="form" action="/login" method="post")
+            .form-group
+                input(type="text", name="username")
+            .form-group
+                input(type="password", name="password")
