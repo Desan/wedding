@@ -2,6 +2,7 @@ import express, { Application } from "express"
 import path from "path"
 import { ManagerController } from "./controllers/Manger"
 import { AuthenticationController } from "./controllers/Authentication"
+import { InvitationController } from "./controllers/Invitation"
 
 class App {
 
@@ -18,6 +19,7 @@ class App {
         // register controllers
         this.app.use(AuthenticationController.root, new AuthenticationController().router)
         this.app.use(ManagerController.root, new ManagerController().router)
+        this.app.use(InvitationController.root, new InvitationController().router)
     }
 
     private viewConfig(): void {

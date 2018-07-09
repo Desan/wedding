@@ -1,0 +1,13 @@
+.form-group {
+  margin-bottom: 12px;
+}
+.form-input {
+  width: 100%;
+  border: none;
+  border-bottom: #6d496c 2px solid;
+}
+.form-label {
+  font-family: sans-serif;
+  display: block;
+  font-size: 12px;
+}
