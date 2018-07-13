@@ -6,6 +6,12 @@ export class Guest extends Typegoose {
      */
     @prop({required: true})
     name?: string
+
+    /**
+     * Имя гостя
+     */
+    @prop({required: true})
+    fullName?: string
   
     /**
      * Приял ли приглание
