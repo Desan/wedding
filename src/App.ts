@@ -1,5 +1,6 @@
-import express, { Application } from "express"
 import path from "path"
+import mongoose from "mongoose"
+import express, { Application } from "express"
 import { ManagerController } from "./controllers/Manger"
 import { AuthenticationController } from "./controllers/Authentication"
 import { InvitationController } from "./controllers/Invitation"
@@ -7,10 +8,12 @@ import { InvitationController } from "./controllers/Invitation"
 class App {
 
     public app: Application
+    public mongoUrl = 'mongodb://127.0.0.1:27017/main'
 
     constructor() {
         this.app = express()
         this.config()
+        this.databaseConfig()
     }
 
     private config(): void {
@@ -26,6 +29,11 @@ class App {
         this.app.set('view engine', 'pug');
         this.app.set('views', path.join(__dirname, "views"))
         this.app.use(express.static("pub"))
+    }
+
+    private databaseConfig(): void {
+        mongoose.Promise = global.Promise
+        mongoose.connect(this.mongoUrl)
     }
 
 }

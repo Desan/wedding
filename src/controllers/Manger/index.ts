@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express"
+import { Guest } from '../../models/Guest'
 
 export class ManagerController {
 
@@ -16,5 +17,11 @@ export class ManagerController {
     }
 
     private getAction(req: Request, res: Response) {
+        Guest.Model.find({}, (err, guests) => {
+            if (err) {
+                res.send(err)
+            }
+            res.json(guests)
+        })
     }
 }

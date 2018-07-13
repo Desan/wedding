@@ -20,6 +20,7 @@ export class AuthenticationController {
 
     private registerActions() {
         this.router.get('/', this.getAction)
+        this.router.post('/', this.postAction)
     }
 
     private getAction(req: Request, res: Response) {
@@ -27,4 +28,9 @@ export class AuthenticationController {
             translations: { ...formFields }
         })
     }
+
+    private postAction(req: Request, res: Response) {
+        res.send('WOOOAAAA')
+    }
+
 }
