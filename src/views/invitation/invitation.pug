@@ -1,5 +1,46 @@
 extends ../layout.pug
-include ../common/form-row.pug
 
 block content
-    p test
+    if guest.isAccept === undefined
+        img.logo(src="/img/logo.png")
+        .page-wrapper
+            .row.main
+                .title #{translations.Lena}
+                .title.amp &
+                .title #{translations.Leva}
+
+            .row
+                .header #{translations.greeting}
+
+            .gutter-large
+
+            .row
+                .framed.subheader #{translations.august}
+                .subheader.number 11
+                .framed.subheader 2018
+
+            .gutter-large
+
+            .text-page #{translations.text}
+
+            .gutter-large
+
+            .row
+                #accept.accept-btn #{translations.accept}
+                #decline.decline-btn #{translations.decline}
+
+            .gutter-large
+
+
+        script
+            include invitation.js
+
+    if guest.isAccept === true
+        .page-wrapper
+            include invitation-form
+
+        script
+            include invitation.js
+
+    if guest.isAccept === false
+        .page-wrapper false

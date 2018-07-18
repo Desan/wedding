@@ -1,0 +1,38 @@
+mixin createChoises(name, options)
+    each item in options
+        input(type="radio", id=item, name=name, checked=guest[name] === item, value=item)
+        label.select(for=item) #{translations[item]}
+
+mixin createAdditions(name)
+    input(type="checkbox", id=name, name=name, checked=!!guest[name])
+    label.centered-text.select(for=name) #{translations[name]}
+
+.page-wrapper
+    .gutter-large
+    .row.gutter-small
+        .header #{translations.hurray}
+    
+    .text-page.gutter-small #{translations.askQuestions}
+
+    .select-header #{translations.food}
+    .row.gutter-large
+        +createChoises("food", ["fish", "meat", "burger", "plants"])
+        
+    .select-header #{translations.alcohol}
+    .row.gutter-large
+        +createChoises("alcohol", ["weak", "strong", "all", "none"])
+        
+    .select-header #{translations.andMoreQuestions}
+    .row.gutter-small
+        +createAdditions("whantsCeremony")
+    .row.gutter-small
+        +createAdditions("hasSpeech")
+        
+
+    .gutter-large
+
+    include map.html
+
+    .gutter-large
+
+    include form.js

@@ -1,15 +1,153 @@
+$colorPurple = #461c3d
+$colorGreen = #4f6c6b
+
+/**
+* Common
+*/
+body
+    margin: 0
+    background-image: url('/img/bg.jpg')
+    background-size: 25%
+
+input:focus
+textarea:focus
+    outline: none
+
+.clickable
+    cursor pointer
+
+.centered-text
+    text-align: center
+    width: 100%
+
+.framed
+    padding: 16px 32px
+    border-top: 3px solid $colorPurple
+    border-bottom: 3px solid $colorPurple
+
+/**
+* Fonts
+*/
+.playfair
+    font-family: 'Playfair Display', serif
+
+.amatic
+    font-family: 'Amatic SC', cursive
+
+.exo2
+    font-family: 'Exo 2', sans-serif
+
+/**
+* Layout
+*/
+.page-wrapper
+    width 730px
+    margin: 0 auto
+
 .page-center
     display: flex
     align-items: center
     justify-content: center
     min-height: 90vh
 
-input:focus
-textarea:focus
-    outline: none
+.row
+    display: flex
+    justify-content: space-between
+    align-items: center
 
-.btn-primary
+.main
+    padding: 0 80px
+    margin-bottom: 24px
+   
+.gutter-large
+    margin-bottom: 82px
+ 
+.gutter-small
+    margin-bottom: 42px
+
+
+/**
+* Components
+*/
+.select-header
+    @extends .playfair
+    @extends .centered-text
+    margin-bottom: 26px
+    color: $colorPurple
+    font-size: 42px
+
+.select
+    @extends .exo2
+    @extends .clickable
+    padding 12px 14px
+    color: $colorPurple
+    font-size: 26px
+    border-bottom: 3px dashed $colorPurple
+
+.row input
+    display: none
+
+    &:checked + .select
+        background-color: $colorGreen
+        color: white
+
+.title
+    @extends .playfair
+    color: $colorPurple
+    font-size: 70px
+
+    &.amp
+        font-size: 130px
+
+.header
+    @extends .amatic
+    @extends .centered-text
+    text-transform: uppercase
+    color: $colorPurple
+    font-size: 52px
+
+.subheader
+    @extends .centered-text
+    @extends .amatic
+    color: $colorPurple
+    text-transform: uppercase
+    font-size: 58px
+
+    &.number
+        font-family: sans-serif
+        font-weight: 900
+        font-size: 78px
+
+.text-page
+    @extends .exo2
+    font-size: 26px
+
+.logo
+    display: block
+    margin: 0 auto
+    max-width 900px
+    margin-top: 30px
+    margin-bottom: -140px
+
+.decline-btn
+    @extends .exo2
+    @extends .clickable
+    color: #b71c1c
+    text-decoration: underline
+    font-size: 24px
+
+.accept-btn
+    @extends .playfair
+    @extends .clickable
+    @extends .centered-text
+    @extends .framed
+    font-size: 30px
+    text-transform: uppercase
+    width: auto
+
+.primary-btn
+    @extends .clickable
     border: solid 1px
     padding: 12px 24px
-    background: #6d496c
+    background: $colorPurple
     color: white
