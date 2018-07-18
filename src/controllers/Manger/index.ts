@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express"
 import { Guest } from '../../models/Guest'
+import * as translations from "../../app/translations/invitation/ru"
 
 export class ManagerController {
 
@@ -21,7 +22,10 @@ export class ManagerController {
             if (err) {
                 res.send(err)
             }
-            res.json(guests)
+            guests = guests.sort((a, b) => {
+                return a.isAccept ? -1 : 1
+            })
+            res.render("statistics", {guests, translations, host: process.env.HOST})
         })
     }
 }
