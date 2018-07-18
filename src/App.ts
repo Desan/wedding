@@ -27,7 +27,12 @@ class App {
 
     private viewConfig(): void {
         this.app.set('view engine', 'pug');
-        this.app.set('views', path.join(__dirname, "views"))
+        console.info(process.argv)
+        if (process.argv.some(arg => arg === "--prod")) {
+            this.app.set('views', path.join(__dirname, "..", "src", "views"))
+        } else {
+            this.app.set('views', path.join(__dirname, "views"))
+        }
         this.app.use(express.static("pub"))
     }
 
