@@ -23,3 +23,5 @@ export const none = "Не пью"
 export const andMoreQuestions = "И ещё пару уточнений"
 export const whantsCeremony = "Хочу приехать на роспись"
 export const hasSpeech = "Хочу произнести речь"
+
+export const na = "не выбрано"

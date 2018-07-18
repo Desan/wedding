@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+    .page-wrapper.flex-layout
+        each guest in guests
+            .card.exo2(class= guest.isAccept ? "accepted" : guest.isAccept != null ? "declined" : "none")
+                .username #{guest.name}
+                .username #{guest.fullName}
+                .card-content
+                    p #{translations.alcohol}: #{guest.alcohol ? translations[guest.alcohol] : translations.na}
+                    p #{translations.food}: #{guest.food ? translations[guest.food] : translations.na}
+                    p #{guest.whantsCeremony && translations.whantsCeremony}
+                    p #{guest.hasSpeech && translations.hasSpeech}
+
+                .link #{`${hostname}/invitation/${guest._id}`}
