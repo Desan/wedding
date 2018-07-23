@@ -41,4 +41,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     alcohol.forEach(id => {
         mountHandler(id, "change", (event) => updateGuest({alcohol: event.target.value}))
     })
+
+    mountHandler("whantsCeremony", "change", (event) => updateGuest({whantsCeremony: event.target.checked}))
+    mountHandler("hasSpeech", "change", (event) => updateGuest({hasSpeech: event.target.checked}))
 })
