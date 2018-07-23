@@ -1,10 +1,15 @@
 $colorPurple = #461c3d
 $colorGreen = #4f6c6b
 
+$smallBP = 600px
+
 body
     margin: 0
     background-image: url('/img/bg.jpg')
     background-size: 25%
+
+    @media screen and (max-width: $smallBP)
+        background-size: 80%
 
 input:focus
 textarea:focus
@@ -35,6 +40,9 @@ textarea:focus
     width 730px
     margin: 0 auto
 
+    @media screen and (max-width: 730px)
+        width 100%
+
 .page-center
     display: flex
     align-items: center
@@ -57,6 +65,9 @@ textarea:focus
    
 .gutter-large
     margin-bottom: 82px
+
+    @media screen and (max-width: $smallBP)
+        margin-bottom: 42px
  
 .gutter-small
     margin-bottom: 42px
@@ -88,8 +99,14 @@ textarea:focus
     color: $colorPurple
     font-size: 70px
 
+    @media screen and (max-width: $smallBP)
+        font-size: 42px
+
     &.amp
         font-size: 130px
+
+        @media screen and (max-width: $smallBP)
+            font-size: 42px
 
 .header
     @extends .amatic
@@ -118,8 +135,12 @@ textarea:focus
     display: block
     margin: 0 auto
     max-width 900px
+    width: 100%
     margin-top: 30px
     margin-bottom: -140px
+
+    @media screen and (max-width: $smallBP)
+        margin-bottom: -52px
 
 .decline-btn
     @extends .exo2
@@ -172,3 +193,21 @@ textarea:focus
     font-weight: 600
     p
         margin: 8px 0
+
+.date
+    @media screen and (max-width: $smallBP)
+        flex-flow: column
+
+        .number
+            order -1
+
+        .subheader
+            box-sizing: border-box;
+            width: 100%;
+
+.choice
+    @media screen and (max-width: $smallBP)
+        flex-flow: column
+
+        .accept-btn
+            @extends .gutter-small
